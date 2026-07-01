@@ -27,6 +27,9 @@ jobs:
       - name: Run Code Quality Check
         run: flake8 .
 
+      - name: Check Code Formatting
+        run: black --check .
+
       - name: Run Tests
         run: pytest
 
