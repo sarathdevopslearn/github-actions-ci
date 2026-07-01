@@ -26,3 +26,16 @@ jobs:
 
       - name: Run Tests
         run: pytest
+
+      - name: Create Build Folder
+        run: |
+          mkdir build
+          cp app.py build/
+          cp calculator.py build/
+          cp requirements.txt build/
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-app
+          path: build/
